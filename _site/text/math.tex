@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amssymb}
+\setlength{\textwidth}{16cm}
+\setlength{\hoffset}{-1cm}
+\setlength{\voffset}{0pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\begin{document}
+
+\title{CO 351 - Assignment \#1}
+\author{Student Name}
+\date{Due: $12^{th}$ May 2006 12:00PM}
+
+\maketitle
+
+\begin{enumerate}
+% Q1
+\item
+\emph{Proof:}
+\begin{enumerate}
+\item
+Given a digraph $D=\{N,A\}$. Assume we have an $st$-dipath $P = \{v_1v_2, v_2v_3, ... , v_{k-1}v_k\}$ where $s=v_1, t=v_k$. Let $\delta(S)$ be any $st$-cut. Chosing $a$ to be the largest from the range $1 \le a \le k-1$ (that is the last node in $S$, whose arc has head outside $S$) such that $v_1 \in S$. Then we know that $\exists v_{a+1} \notin S \ and \ v_av_{a+1} \in A$. Therefore $\forall$ $st$-cuts $\delta(S) \not= \emptyset$. $\Box$ 
+\item
+Given a digraph $D=\{N,A\}$. Assume there is no $st$-dipath. Let the set $S$ be the nodes which can be reached from $s$. Therefore we know that $s \in S$ and $t \notin S$ (by definition of reachability, since no $st$-dipath). Then $\forall a,b$ where $a \in S$ and $b \notin S$, $ab \notin A$ (reachability, $\exists$ $sa$-path but $\nexists$ $sb$-path). Therefore the arc $ab \notin A$. Therefore $\exists$ $st$-cut $\delta(S) = \emptyset$. $\Box$ 
+\end{enumerate}
+
+
+% Q2
+\item
+\emph{Proof:} \\
+Given any $uv$-dipath $P_{uv} = \{k_1k_2, k_2k_3, ..., k_{i-1}k_i\}$, such that $k_1 = u$ and $k_i = v$. Also given any $vw$-dipath $P_{vw} = \{k_ik_{i+1}, ..., k_{n-1}, k_n\}$, such that $k_i = v$ and $k_n = w$. Remark $1 \le i \le n$. If we put these two paths together we get a sequence of arcs $P = \{k_1k_2, k_2k_3, ..., k_{i-1}k_i, ..., k_{n-1}k_n\}$ such that $k_1 = u$, $k_i = v$, $k_n = w$. We define the $uw$-cut to be $\delta(S)$. Then for any $S$ such that $k_j \in S$, $1 \le j < n$. Then there exists $k_{j+1} \notin S$, $k_{j+1} \in \{k_1, k_2, ..., k_n\}$. Therefore there exists $k_jk_{j+1} \in P$. In otherwords $k_jk_{j+1} \in \delta(S)$. Therefore $\delta(S) \not= \emptyset$, (the $uw$-cut). Therefore by Theorem3 there exists a $uw$-dipath (since there are no empty $uw$-cuts). $\Box$
+
+% Q3
+\item
+\emph{Proof:}
+\begin{enumerate}
+\item
+Every arc of this type has tail $u \in S$ and has a head $\in S$ which means that these arcs do not leave nor enter $S$  That means that this type of arcs do not change the left side of the quality ($\sigma_{u \in S}(d(u) - d(\bar{u}))$ because for every arc the tail is counted towards $d(u)$ and the head is counted towards $d(\bar{u})$. Further more we know that the contribution to $|\delta(S)| - |\delta(\bar{S})|$ would be zero since in this situation no arcs leave or enter $S$. 
+\item
+In this case there is zero contribution to the left side since $u,v \notin S$ and there is also no contribution to the right side because the arcs have tails and heads $\notin S$, therefore there are no arcs entering or leaving $S$.
+\item
+Every arc of this type has tail $u \in S$ and has head $\notin S$. Therefore the sum of all these arcs is $\delta(S)$.
+\item
+Every arc of this type has head $u \in S$ and has tail $\notin S$. Therefore the sum of all these arcs is $\delta(\bar{S})$.
+\end{enumerate}
+Since any arc can be exclusively from one of the 4 types (a,b,c,d) we can split the sum $\sigma_{u \in S}(d(u) - d(\bar{u})) = \sigma_{u_a,u_c,u_d \in S}(d(u_a) + d(u_b) + d(u_c) + d(u_d) - d(\bar{u_a}) - d(\bar{u_b}) - d(\bar{u_c}) - d(\bar{u_d}))$. We know that $d(u_a) - d(\bar{u_a}) = 0$ because of the argument in (a). We know that $d(u_b) = 0$ and $d(\bar{u_b}) = 0 because u_b \notin S$ nor are any of the nodes it connects to as explained in (b). $d(\bar{u_c}) = 0$ because this is the set of arcs that only have tails in $S$. $d(u_d) = 0$ because this is the set of arcs that have only heads in $S$. Therefore we are left with $\sigma_{u_a, u_c, u_d \in S}(d(u_c) - d(\bar{u_d}))$ which is $|\delta(S)| - |\delta(\bar{S})|$ (that is, as shown in (c) and (d), (all the arcs with tails $\in S$ and heads $\notin S$) - (all the arcs with heads $\in S$ and tails $\notin S$)).   
+
+% Q4
+\item
+The problem can be represented by a directed graph $D=\{N,A\}, \ N=\{0,1,2,3,4\}, \ A=\{01,02,03,04,12,13,14,23,24,34\}$ such that each arc is associated with a cost. Each cost is computed as follows: $w(A_{ij}) = K_i+1 + C_i+1(D_{i+1} + D_{i+2} + ... + D_{i+j+1}), \ 0 \le i \le j \le k-1, \ k=max(N)$. $i+1$ is the number of the day during which the container is filled, $i+j+1$ is the number of the day until which the supply should last. $K_{i+1}$ is the fixed cost for refilling the container at the beginning of day $i+1$. $C_{i+1}$ is the cost of each unit for the given day ${i+1}$. $D_{i+1}$ is the number of unit demanded for day ${i+1}$.\\
+The weights would be as follows:\\
+$w(A_{01}) = 25 + 8(5) = 65$\\
+$w(A_{02}) = 25 + 8(5+9) = 137$\\
+$w(A_{03}) = 25 + 8(5+9+6) = 185$\\ 
+$w(A_{04}) = 25 + 8(5+9+6+2) = 201$\\ 
+$w(A_{12}) = 15 + 9(9) = 96$\\
+$w(A_{13}) = 15 + 9(9+6) = 150$\\
+$w(A_{14}) = 15 + 9(9+6+2) = 168$\\ 
+$w(A_{23}) = 16 + 13(6) = 94$\\
+$w(A_{24}) = 16 + 13(6+2) = 120$\\ 
+$w(A_{34}) = 2 + 11(2) = 24$\\
+The min cost is \$201 and the shortest dipath respectively is $P=\{04\}$.
+\end{enumerate}
+\end{document}
