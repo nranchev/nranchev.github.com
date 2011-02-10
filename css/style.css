@@ -9,7 +9,7 @@ BODY {
 	margin-right: auto;
 	text-align: center;
 	background: #000000;
-	/*background: url('../lib/img/background.png') repeat;*/
+	/*background: url('/img/background.png') repeat;*/
 }
 A,A:link,A:visited {
 	font-family: Verdana, Arial, Sans-Serif;
@@ -58,7 +58,7 @@ input#search_button {
 	margin:0px;
 	margin-top:5px;
 	margin-bottom:5px;
-	background: #99c2ff url('/static/img/top.jpg') no-repeat;
+	background: #99c2ff url('/img/top.jpg') no-repeat;
 	text-align: right;
 	border-radius: 15px;
 	-moz-border-radius: 15px;
