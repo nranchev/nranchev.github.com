@@ -1,13 +1,13 @@
 <!DOCTYPE HTML> 
 <html> 
 <head> 
-	<title>www.ranchev.net - CRTC's Decision to Impose Metered Internet is Good</title> 
+	<title>www.ranchev.net - {{ page.title }}</title> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<!-- <meta http-equiv="Content-Language" content="en-CA" /> --> 
-	<meta name="description" content="CRTC's decision to force price fixing is good" /> 
+	<meta name="description" content="{{ page.description }}" /> 
 	<meta name="author" content="Nikola Ranchev (ranchev@gmail.com)" /> 
 	<meta name="copyright" content="&copy; 2011 Nikola Ranchev" /> 
-	<meta name="keywords" content="Nikola Ranchev, Nick, Nick Ranchev, Ranchev, Nikola, home, CRTC, metered internet, cap, internet, Canada, Bell, Rogers" /> 
+	<meta name="keywords" content="Nikola Ranchev, Nick, Nick Ranchev, Ranchev, Nikola, home, {{ page.keywords }}" /> 
 	<meta name="no-email-collection" content="Please, do not collect e-mails for spam" /> 
 	<meta name="generator" content="vim" /> 
 	<link rel="shortcut icon" href="/static/img/favicon.ico" /> 
@@ -56,7 +56,7 @@
 			--> 
 		</div> 
 		<div style="float:left; text-align: right; width: 400px; font-size: 12px; padding-top:40px; padding-bottom:0px; color: #99c2ff; font-weight: bold;">
-			10 Feb 2011
+			{{ page.date | date: '%d' }} {{ page.date | date: '%b' }} {{ page.date | date: '%Y'}}
 		</div>
 		<div style="float:right;text-align:right;"> 
 			<div style="height:25px;"> 
@@ -65,9 +65,9 @@
 			</div> 
 			<div style="padding-top:5px; width: 250px; text-align:center; overflow: hidden;"> 
 				܀
-				
-				<a href="/2011/02/10/crtc-decision-to-impose-meter-is-good/" title="CRTC's Decision to Impose Metered Internet is Good">Latest</a>
-				 |
+				{% for post in site.posts limit:1 %}
+				<a href="{{ post.url }}" title="{{ post.title }}">Latest</a>
+				{% endfor %} |
 				<a href="/vim" title="Vim - my config">Vim</a> |
 				<a href="/latex" title="LaTeX - two samples">LaTeX</a>
 			</div>
@@ -77,27 +77,3 @@
 
 
 <div class="main" id="main" onMouseOver="mainOver();" onMouseOut="mainOut();"> 
-
-<h1>CRTC's Decision to Impose Metered Internet is Good</h1>
-Article arriving soon...
-
-</div>
-
-<div class="footer"> 
-	<div class="footer_stamp" id="footer_stamp">
-		2011-02-10 14:35:23 -0500
-	</div>
-	 ҉ Nikola Ranchev 2011
-</div> 
- 
-<script type="text/javascript"> 
-	(function() {
-		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-</script> 
- 
-</body> 
-</html> 
-

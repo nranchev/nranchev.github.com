@@ -1,0 +1,24 @@
+#shareit-box {
+  position: absolute;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background: #fff;
+  width: 122px;
+}
+#shareit-box h2 {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0;
+  margin: 4px 0 10px 0;
+  text-align: left;
+  color: #333;
+  background: none;
+}
+#shareit-box a {
+  margin: 0 6px;
+}
+#shareit-box img {
+  border: none;
+}

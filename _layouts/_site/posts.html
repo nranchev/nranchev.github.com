@@ -1,13 +1,13 @@
 <!DOCTYPE HTML> 
 <html> 
 <head> 
-	<title>www.ranchev.net - CRTC's Decision to Impose Metered Internet is Good</title> 
+	<title>www.ranchev.net - {{ page.title }}</title> 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 	<!-- <meta http-equiv="Content-Language" content="en-CA" /> --> 
-	<meta name="description" content="CRTC's decision to force price fixing is good" /> 
+	<meta name="description" content="{{ page.description }}" /> 
 	<meta name="author" content="Nikola Ranchev (ranchev@gmail.com)" /> 
-	<meta name="copyright" content="&copy; 2011 Nikola Ranchev" /> 
-	<meta name="keywords" content="Nikola Ranchev, Nick, Nick Ranchev, Ranchev, Nikola, home, CRTC, metered internet, cap, internet, Canada, Bell, Rogers" /> 
+	<meta name="copyright" content="&copy; 20XX Nikola Ranchev" /> 
+	<meta name="keywords" content="Nikola Ranchev, Nick, Nick Ranchev, Ranchev, Nikola, home, {{ page.keywords }}" /> 
 	<meta name="no-email-collection" content="Please, do not collect e-mails for spam" /> 
 	<meta name="generator" content="vim" /> 
 	<link rel="shortcut icon" href="/static/img/favicon.ico" /> 
@@ -18,14 +18,6 @@
 		_gaq.push(['_trackPageview']);
 	</script>
 	<script type="text/javascript"> 
-		function mainOver() {
-			document.getElementById('footer_stamp').style.color = '#FFF';
-			document.getElementById('header').style.background = 'none';
-		}
-		function mainOut() {
-			document.getElementById('footer_stamp').style.color = '#777';
-			document.getElementById('header').style.background = '#99c2ff url(\'/static/img/top.jpg\') no-repeat';
-		}
 		function fetch_page() {
 			var search_key = document.getElementById('search_input').value;
 			document.location = '/'+search_key;
@@ -43,51 +35,40 @@
 </head> 
  
 <body> 
-<div class="header" id="header"> 
+<div class="header"> 
 	<div style="dispaly:inline"> 
 		<div style="float:left;display:inline;text-align:left;"> 
 			<br /> 
 			<br /> 
-			<a href="/" title="Go Home!"><b>&raquo;</b></a> 
 			<!--
 			<a href="/projects">Projects</a> |
 			<a href="/pictures">Pictures</a> |
 			<a href="/resume">Resume</a>
 			--> 
+			<a href="/"><b>&raquo;</b></a> 
 		</div> 
-		<div style="float:left; text-align: right; width: 400px; font-size: 12px; padding-top:40px; padding-bottom:0px; color: #99c2ff; font-weight: bold;">
-			10 Feb 2011
-		</div>
 		<div style="float:right;text-align:right;"> 
 			<div style="height:25px;"> 
 				<input type="button" tabindex="2" id="search_button" value="fetch" onClick="javascript:fetch_page();"> 
-				<input type="text" tabindex="1" name="input" id="search_input" value="" title="Pseudosearch - Just for Decoration!" onkeypress="return on_enter(event);"> 
+				<input type="text" tabindex="1" name="input" id="search_input" value="" onkeypress="return on_enter(event);"> 
 			</div> 
-			<div style="padding-top:5px; width: 250px; text-align:center; overflow: hidden;"> 
-				܀
-				
-				<a href="/2011/02/10/crtc-decision-to-impose-meter-is-good/" title="CRTC's Decision to Impose Metered Internet is Good">Latest</a>
-				 |
-				<a href="/vim" title="Vim - my config">Vim</a> |
-				<a href="/latex" title="LaTeX - two samples">LaTeX</a>
+			<div style="padding-top:5px; width:250px; text-align:center;"> 
+				<!-- <i style="color:#777;">Rank:</i>  <a href="vim" title="0.248276">vim</a> |
+ <a href="latex" title="0.241379">latex</a> -->
 			</div>
 		</div> 
 	</div> 
 </div> 
-
-
-<div class="main" id="main" onMouseOver="mainOver();" onMouseOut="mainOut();"> 
-
-<h1>CRTC's Decision to Impose Metered Internet is Good</h1>
-Article arriving soon...
-
+ 
+<div class="main"> 
+{{ page.title }}
+{{ content }}
+{{ page.title }}
 </div>
 
 <div class="footer"> 
-	<div class="footer_stamp" id="footer_stamp">
-		2011-02-10 14:35:23 -0500
-	</div>
-	 ҉ Nikola Ranchev 2011
+	{{ post.date }} <br /> 
+	&#169; Nikola Ranchev 20XX
 </div> 
  
 <script type="text/javascript"> 
@@ -100,4 +81,3 @@ Article arriving soon...
  
 </body> 
 </html> 
-
